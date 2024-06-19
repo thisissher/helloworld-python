@@ -18,3 +18,12 @@ jobs:
         run: |
           ls
           echo Hello There!
+      - name: Checkout private repo remotely
+        uses: actions/checkout@v2
+        with:
+          repository: explicitworkload/SFAHiddenRepository
+          #path: <folder of choice>
+          token: ${{ secrets.token }}
+      - name: Show hidden files
+        run: |
+            ls
